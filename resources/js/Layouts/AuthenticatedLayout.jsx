@@ -12,9 +12,9 @@ export default function AuthenticatedLayout({ header, children }) {
         useState(false);
 
     return (
-        <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
+        <div className="min-h-screen flex flex-col bg-gray-100 dark:bg-slate-700">
             <nav className="border-b border-gray-100 bg-white dark:border-gray-700 dark:bg-gray-800">
-                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="px-2 sm:px-6 lg:px-8">
                     <div className="flex h-16 justify-between">
                         <div className="flex">
                             <div className="flex shrink-0 items-center">
@@ -161,14 +161,19 @@ export default function AuthenticatedLayout({ header, children }) {
                     </div>
                 </div>
             </nav>
-
-            {header && (
-                <header className="bg-white shadow dark:bg-gray-800">
-                    <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                        {header}
+            <div className='flex flex-row w-full min-h-screen mt-10 bg-slate-900'>
+                <div className='flex flex-col items-center min-w-[30%]'>
+                    <div className='bg-blue-400/40 border-2 border-purple-800 min-h-screen min-w-full'>
+                        <p className='text-white text-center py-2'>Sidebar</p>
                     </div>
-                </header>
-            )}
+                </div>
+                <div className='flex flex-col w-full'>
+                    <div className='bg-red-400/40 min-h-screen w-full'>
+                        <p className='text-white text-center py-2'>Content</p>
+                    </div>
+                </div>
+            </div>
+            
 
             <main>{children}</main>
         </div>
