@@ -12,9 +12,9 @@ export default function AuthenticatedLayout({ header, children }) {
         useState(false);
 
     return (
-        <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
+        <div className="min-h-screen flex flex-col bg-gray-100 dark:bg-slate-700">
             <nav className="border-b border-gray-100 bg-white dark:border-gray-700 dark:bg-gray-800">
-                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="px-2 sm:px-6 lg:px-8">
                     <div className="flex h-16 justify-between">
                         <div className="flex">
                             <div className="flex shrink-0 items-center">
@@ -23,14 +23,14 @@ export default function AuthenticatedLayout({ header, children }) {
                                 </Link>
                             </div>
 
-                            <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                            {/* <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink
                                     href={route('dashboard')}
                                     active={route().current('dashboard')}
                                 >
                                     Dashboard
                                 </NavLink>
-                            </div>
+                            </div> */}
                         </div>
 
                         <div className="hidden sm:ms-6 sm:flex sm:items-center">
@@ -43,6 +43,8 @@ export default function AuthenticatedLayout({ header, children }) {
                                                 className="inline-flex items-center rounded-md border border-transparent bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out hover:text-gray-700 focus:outline-none dark:bg-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
                                             >
                                                 {user.name}
+
+                                                <img class="inline-block size-8 ml-2 rounded-md" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""></img>
 
                                                 <svg
                                                     className="-me-0.5 ms-2 h-4 w-4"
@@ -161,14 +163,25 @@ export default function AuthenticatedLayout({ header, children }) {
                     </div>
                 </div>
             </nav>
-
-            {header && (
-                <header className="bg-white shadow dark:bg-gray-800">
-                    <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                        {header}
+            <div className='flex flex-row w-full min-h-screen mt-10 bg-slate-900'>
+                <div className='flex flex-col items-center min-w-[30%]'>
+                    <div className='bg-blue-400/40 space-y-2 border border-purple-800 border-8 min-h-screen min-w-full'>
+                        <div>
+                            <p className='text-white font-semibold text-center'>Sidebar</p>
+                        </div>
+                        <div className='flex flex-col'>
+                            <p className='text-white text-center'>Link 1</p>
+                            <p className='text-white text-center'>Link 2</p>
+                        </div>
                     </div>
-                </header>
-            )}
+                </div>
+                <div className='flex flex-col w-full'>
+                    <div className='bg-red-400/40 min-h-screen w-full'>
+                        <p className='text-white text-center py-2'>Content</p>
+                    </div>
+                </div>
+            </div>
+            
 
             <main>{children}</main>
         </div>

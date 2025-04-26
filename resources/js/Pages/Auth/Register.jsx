@@ -11,7 +11,6 @@ export default function Register() {
         email: '',
         password: '',
         password_confirmation: '',
-        steam_id: ''
     });
 
     const submit = (e) => {
@@ -27,21 +26,21 @@ export default function Register() {
             <Head title="Register" />
 
             <form onSubmit={submit}>
-
                 <div>
-                    <InputLabel htmlFor="steamid" value="Steam Id" />
+                    <InputLabel htmlFor="name" value="Name" />
 
                     <TextInput
-                        id="steamid"
-                        name="steam_id"
-                        value={data.steam_id}
+                        id="name"
+                        name="name"
+                        value={data.name}
                         className="mt-1 block w-full"
+                        autoComplete="name"
                         isFocused={true}
-                        onChange={(e) => setData('steam_id', e.target.value)}
+                        onChange={(e) => setData('name', e.target.value)}
                         required
                     />
 
-                    <InputError message={errors.steam_id} className="mt-2" />
+                    <InputError message={errors.name} className="mt-2" />
                 </div>
 
                 <div className="mt-4">
