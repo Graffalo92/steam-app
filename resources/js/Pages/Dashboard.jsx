@@ -1,5 +1,6 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
+import UserList from '@/Components/UserList';
 
 export default function Dashboard({ users }) {
     console.log(users);
@@ -13,12 +14,17 @@ export default function Dashboard({ users }) {
         >
             <Head title="Dashboard" />
 
-            <div className="py-12">
-                <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg dark:bg-gray-800">
-                        
-                    </div>
-                </div>
+            <div>
+                <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-200">
+                    Welcome to the Dashboard
+                </h1>
+                <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
+                    Here you can search our users and view their details.
+                </p>
+            </div>
+
+            <div className="py-8 mr-16">
+                <UserList users={users} />
             </div>
         </AuthenticatedLayout>
     );

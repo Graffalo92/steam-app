@@ -13,7 +13,7 @@ export default function AuthenticatedLayout({ header, children }) {
 
     return (
         <div className="min-h-screen flex flex-col bg-gray-100 dark:bg-slate-700">
-            <nav className="border-b border-gray-100 bg-white dark:border-gray-700 dark:bg-gray-800">
+            <nav className="border-b border-gray-100 bg-white dark:border-gray-700 dark:bg-slate-800">
                 <div className="px-2 sm:px-6 lg:px-8">
                     <div className="flex h-16 justify-between">
                         <div className="flex">
@@ -163,27 +163,24 @@ export default function AuthenticatedLayout({ header, children }) {
                     </div>
                 </div>
             </nav>
-            <div className='flex flex-row w-full min-h-screen mt-10 bg-slate-900'>
+            <div className='flex flex-row w-full min-h-screen pt-10 bg-slate-900'>
                 <div className='flex flex-col items-center min-w-[30%]'>
-                    <div className='bg-blue-400/40 space-y-2 border border-purple-800 border-8 min-h-screen min-w-full'>
+                    <div className='space-y-2 min-h-screen min-w-full'>
                         <div>
-                            <p className='text-white font-semibold text-center'>Sidebar</p>
+                            <p className='text-white text-xl font-semibold text-center'>Sidebar</p>
                         </div>
                         <div className='flex flex-col'>
-                            <p className='text-white text-center'>Link 1</p>
-                            <p className='text-white text-center'>Link 2</p>
+                            <p className='text-white text-lg text-center'>Link 1</p>
+                            <p className='text-white text-lg text-center'>Link 2</p>
                         </div>
                     </div>
                 </div>
                 <div className='flex flex-col w-full'>
-                    <div className='bg-red-400/40 min-h-screen w-full'>
-                        <p className='text-white text-center py-2'>Content</p>
+                    <div className='min-h-screen w-full'>
+                        <main>{children}</main>
                     </div>
                 </div>
-            </div>
-            
-
-            <main>{children}</main>
+            </div>            
         </div>
     );
 }
