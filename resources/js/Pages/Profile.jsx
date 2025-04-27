@@ -56,21 +56,6 @@ export default function Profile({ user }) {
                                             <p className="text-sm text-gray-500 dark:text-gray-400">
                                                 Total hours played: {(Math.ceil(game.playtime_forever / 30) / 2).toFixed(1)}
                                             </p>
-                                            {game.rtime_last_played ? (
-                                                <p className="text-sm text-gray-500 dark:text-gray-400">
-                                                    Last played: {new Date(game.rtime_last_played * 1000).toLocaleString('en-GB', {
-                                                        day: '2-digit',
-                                                        month: '2-digit',
-                                                        year: 'numeric',
-                                                        hour: '2-digit',
-                                                        minute: '2-digit',
-                                                    })}
-                                                </p>
-                                            ) : (
-                                                <p className="text-sm text-gray-500 dark:text-gray-400">
-                                                    Last played: Not available
-                                                </p>
-                                            )}
                                         </div>
                                         <img className='h-10 w-10' src={`http://media.steampowered.com/steamcommunity/public/images/apps/${game.appid}/${game.img_icon_url}.jpg`} alt={`${game.name} Thumbnail`} />
                                     </div>
