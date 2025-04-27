@@ -25,7 +25,6 @@ Route::get('/profile/{id}', function ($id) {
         return redirect()->route('dashboard');
     }
     $user->games = $user->games();
-    // dd($user->games);
     return Inertia::render('Profile', ["user" => $user]);
 })->middleware(['auth', 'verified'])->name('profile');
 

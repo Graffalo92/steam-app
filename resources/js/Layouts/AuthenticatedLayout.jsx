@@ -182,13 +182,14 @@ export default function AuthenticatedLayout({ header, children }) {
                             Dashboard
                         </NavLink>
                         <NavLink
+                            href={route('profile', { id: user.id })} // Dynamically route to profile/{user.id}
                             className={({ isActive }) =>
-                                    `w-40 px-4 py-2 rounded-lg transition text-xl text-white ${
-                                        isActive
-                                            ? 'bg-slate-600' // If active, slightly different color
-                                            : 'bg-slate-700 hover:bg-slate-600'
-                                    }`
-                                }
+                                `w-40 px-4 py-2 rounded-lg transition text-xl text-white ${
+                                    isActive
+                                        ? 'bg-slate-600' // If active, slightly different color
+                                        : 'bg-slate-700 hover:bg-slate-600'
+                                }`
+                            }
                         >
                             My Games
                         </NavLink>
