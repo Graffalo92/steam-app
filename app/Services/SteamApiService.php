@@ -25,4 +25,15 @@ class SteamApiService
         ])->get('{+endpoint}/{feature}/{action}/{version}', ["key" => $this->SteamKey,  "steamids" => $steamId])->json();
 
     }
+
+    public function getSteamUserGames(string $steamId) {
+
+        return Http::withUrlParameters([
+            'endpoint' => $this->steamlink,
+            'feature' => 'IPlayerService',
+            'action' => 'GetOwnedGames',
+            'version' => 'v0001',
+        ])->get('{+endpoint}/{feature}/{action}/{version}', ["key" => $this->SteamKey,  "steamid" => $steamId, "include_appinfo" => 1, "include_played_free_games" => 1])->json();
+
+    }
 }

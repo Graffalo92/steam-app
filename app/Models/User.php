@@ -3,10 +3,10 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Services\SteamApiService;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
@@ -22,7 +22,8 @@ class User extends Authenticatable
         'email',
         'password',
         'steam_id',
-        'avatar_url'
+        'avatar_url',
+        'games'
     ];
 
     /**
@@ -46,5 +47,14 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function games() {
+        $steamApiService = new SteamApiService();
+        $response = $steamApiService->getSteamUserGames($this->steam_id);
+        if (isset($response['response']['games'])) {
+            return $response['response']['games'];
+        }
+        return [];
     }
 }

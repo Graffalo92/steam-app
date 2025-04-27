@@ -20,7 +20,13 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/profile/{id}', function ($id) {
-    return Inertia::render('Profile', ["user" => User::find($id)]);
+    $user = User::find($id);
+    if (!User::find($id)) {
+        return redirect()->route('dashboard');
+    }
+    $user->games = $user->games();
+    // dd($user->games);
+    return Inertia::render('Profile', ["user" => $user]);
 })->middleware(['auth', 'verified'])->name('profile');
 
 Route::middleware('auth')->group(function () {
