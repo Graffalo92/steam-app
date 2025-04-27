@@ -3,7 +3,7 @@ import { Head } from '@inertiajs/react';
 import UserList from '@/Components/UserList';
 
 export default function Dashboard({ users }) {
-    console.log(users);
+    //console.log(users);
     return (
         <AuthenticatedLayout
             header={
