@@ -14,8 +14,8 @@ export default function Profile({ user }) {
         >
             <Head title="Profile" />
 
-            <div className="max-w-4xl mx-auto py-10">
-                <div className="flex items-center space-x-6">
+            <div className="max-w-4xl mx-auto">
+                <div className="flex items-center space-x-6 ml-20">
                     <img
                         src={user.avatar_url || '/default-avatar.png'}
                         alt="Profile Avatar"
@@ -28,7 +28,7 @@ export default function Profile({ user }) {
                 </div>
 
                 <div className="mt-10">
-                    <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Games</h2>
+                    <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mx-20 mb-4">Games</h2>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                         {user.games && user.games.length > 0 ? (
                             user.games.map((game, index) => (
@@ -38,7 +38,7 @@ export default function Profile({ user }) {
                                 </div>
                             ))
                         ) : (
-                            <p className="text-gray-500 dark:text-gray-400">No games listed.</p>
+                            <p className="text-gray-500 dark:text-gray-400 ml-20">No games listed.</p>
                         )}
                     </div>
                 </div>
