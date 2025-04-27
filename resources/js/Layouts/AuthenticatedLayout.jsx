@@ -23,14 +23,7 @@ export default function AuthenticatedLayout({ header, children }) {
                                 </Link>
                             </div>
 
-                            {/* <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink
-                                    href={route('dashboard')}
-                                    active={route().current('dashboard')}
-                                >
-                                    Dashboard
-                                </NavLink>
-                            </div> */}
+                            
                         </div>
 
                         <div className="hidden sm:ms-6 sm:flex sm:items-center">
@@ -169,8 +162,15 @@ export default function AuthenticatedLayout({ header, children }) {
                         <div>
                             <p className='text-white text-xl font-semibold text-center'>Sidebar</p>
                         </div>
-                        <div className='flex flex-col'>
-                            <p className='text-white text-lg text-center'>Link 1</p>
+                        <div className='flex items-center flex-col'>
+                        <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                                <NavLink
+                                    href={route('dashboard')}
+                                    active={route().current('dashboard')}
+                                >
+                                    Dashboard
+                                </NavLink>
+                            </div>
                             <p className='text-white text-lg text-center'>Link 2</p>
                         </div>
                     </div>
