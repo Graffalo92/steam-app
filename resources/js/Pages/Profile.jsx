@@ -15,15 +15,17 @@ export default function Profile({ user }) {
             <Head title="Profile" />
 
             <div className="max-w-4xl mx-auto">
-                <div className="flex items-center space-x-6 ml-20">
-                    <img
-                        src={user.avatar_url || '/default-avatar.png'}
-                        alt="Profile Avatar"
-                        className="w-24 h-24 rounded-full object-cover"
-                    />
-                    <div>
-                        <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-200">{user.name}</h1>
-                        <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">Joined: {new Date(user.created_at).toLocaleString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' }).replace(',', '')}</p>
+                <div className="flex items-center space-x-6 ">
+                    <div className="relative w-full flex intems-center bg-slate-700 spacce-x-3 rounded-lg px-6 py-5">
+                        <img
+                            src={user.avatar_url || '/default-avatar.png'}
+                            alt="Profile Avatar"
+                            className="w-24 h-24 rounded-full object-cover"
+                        />
+                        <div>
+                            <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-200 ml-5">{user.name}</h1>
+                            <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 ml-10">Joined: {new Date(user.created_at).toLocaleString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' }).replace(',', '')}</p>
+                        </div>
                     </div>
                 </div>
 
