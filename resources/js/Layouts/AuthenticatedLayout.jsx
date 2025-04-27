@@ -158,21 +158,66 @@ export default function AuthenticatedLayout({ header, children }) {
             </nav>
             <div className='flex flex-row w-full min-h-screen pt-10 bg-slate-900'>
                 <div className='flex flex-col items-center min-w-[30%]'>
-                    <div className='space-y-2 min-h-screen min-w-full'>
-                        <div>
-                            <p className='text-white text-xl font-semibold text-center'>Sidebar</p>
-                        </div>
-                        <div className='flex items-center flex-col'>
-                        <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink
-                                    href={route('dashboard')}
-                                    active={route().current('dashboard')}
-                                >
-                                    Dashboard
-                                </NavLink>
+                    <div className="space-y-6 ml-32 w-full">
+                        <div className='flex flex-row items-center ml-4'>
+                            <div className='flex items-center justify-center'>
+                                <svg width="19" height="28" fill="none"><path fill="#5C6166" fill-rule="evenodd" d="M3.5 19H6l-3 3-3-3h2.5v-8.5H19v1H3.5V19z" clip-rule="evenodd"></path></svg>
+                                <svg viewBox="0 0 20 20" width="40" height="40" fill=""><path stroke="#75CEF4" stroke-width="2" d="M4 3v13m4-9v9m4-9v9m4-5v5"></path></svg>
+                                <p className="text-white text-3xl font-bold text-center">Insights</p>
                             </div>
-                            <p className='text-white text-lg text-center'>Link 2</p>
                         </div>
+                        <div className='flex items-start flex-col'>
+                        
+                        <NavLink
+                            href={route('dashboard')}
+                            active={route().current('dashboard')}
+                            className={({ isActive }) =>
+                                 `w-40 px-4 py-2 rounded-lg transition text-xl text-white ${
+                                     isActive
+                                         ? 'bg-slate-600' // If active, slightly different color
+                                         : 'bg-slate-700 hover:bg-slate-600'
+                                  }`
+                            }
+                        >
+                            Dashboard
+                        </NavLink>
+                        <NavLink
+                            className={({ isActive }) =>
+                                    `w-40 px-4 py-2 rounded-lg transition text-xl text-white ${
+                                        isActive
+                                            ? 'bg-slate-600' // If active, slightly different color
+                                            : 'bg-slate-700 hover:bg-slate-600'
+                                    }`
+                                }
+                        >
+                            My Games
+                        </NavLink>
+                        <NavLink
+                            className={({ isActive }) =>
+                                    `w-40 px-4 py-2 rounded-lg transition text-xl text-white ${
+                                        isActive
+                                            ? 'bg-slate-600' // If active, slightly different color
+                                            : 'bg-slate-700 hover:bg-slate-600'
+                                    }`
+                                }
+                        >
+                            Friends
+                        </NavLink>
+                        <NavLink
+                            className={({ isActive }) =>
+                                    `w-40 px-4 py-2 rounded-lg transition text-xl text-white ${
+                                        isActive
+                                            ? 'bg-slate-600' // If active, slightly different color
+                                            : 'bg-slate-700 hover:bg-slate-600'
+                                    }`
+                                }
+                        >
+                            Recently Active
+                        </NavLink>
+                                
+                            </div>
+                            
+                        
                     </div>
                 </div>
                 <div className='flex flex-col w-full'>
