@@ -207,7 +207,7 @@ export default function Example() {
                     {/*        className="aspect-1108/632 w-[69.25rem] bg-linear-to-r from-[#80caff] to-[#4f46e5] opacity-20"*/}
                     {/*    />*/}
                     {/*</div>*/}
-                    <div className="mx-auto max-w-7xl px-6 pt-10 pb-24 sm:pb-32 lg:flex lg:px-8 lg:py-40">
+                    <div className="mx-auto max-w-7xl px-6 pt-10 pb-24 sm:pb-12 lg:flex lg:px-8 lg:py-20">
                         <div className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:pt-8">
                             <ApplicationLogoMain/>
                             {/*<div className="mt-24 sm:mt-32 lg:mt-16">*/}
@@ -262,7 +262,25 @@ export default function Example() {
                             </div>
                         </div>
                     </div>
+                    <div className="flex justify-center scroll-indicator">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-6 h-6 text-white animate-bounce"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M19.5 12l-7.5 7.5L4.5 12"
+                        />
+                    </svg>
                 </div>
+                </div>
+
+
 
                 {/* Logo cloud */}
                 <div className="mx-auto mt-8 max-w-7xl px-6 sm:mt-16 lg:px-8">
